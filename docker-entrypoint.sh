@@ -279,6 +279,14 @@ then
         echo "postgresql_thirdparty_users_table_name: $POSTGRESQL_THIRDPARTY_USERS_TABLE_NAME" >> $CONFIG_FILE
     fi
 
+    if [ ! -z $POSTGRESQL_CA_CERT_URL ]
+    then
+        echo "postgresql_ca_cert_url: $POSTGRESQL_CA_CERT_URL"
+        echo $HOME
+        mkdir /home/supertokens/.postgresql 
+        wget -O /home/supertokens/.postgresql/root.crt "$POSTGRESQL_CA_CERT_URL"
+        echo "download3ed certificate"
+    fi
 fi
 
 # check if no options has been passed to docker run
