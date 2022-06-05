@@ -285,7 +285,7 @@ then
         echo $HOME
         mkdir /home/supertokens/.postgresql 
         wget -O /home/supertokens/.postgresql/root.crt "$POSTGRESQL_CA_CERT_URL"
-        echo "download3ed certificate"
+        echo "downloaded certificate"
     fi
 fi
 
